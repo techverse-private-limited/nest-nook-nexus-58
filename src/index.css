@@ -1,0 +1,391 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+/* Steel Industry Design System */
+@layer base {
+  :root {
+    --background: 45 15% 97%;
+    --foreground: 30 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 15% 15%;
+
+    --primary: 35 45% 35%;
+    --primary-foreground: 45 15% 97%;
+
+    --secondary: 35 25% 88%;
+    --secondary-foreground: 30 15% 15%;
+
+    --muted: 35 20% 92%;
+    --muted-foreground: 30 8% 45%;
+
+    --accent: 42 87% 65%;
+    --accent-foreground: 30 15% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 45 15% 97%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 35 45% 35%;
+
+    --radius: 0.75rem;
+
+    /* Custom steel industry colors */
+    --warm-wood: 30 35% 45%;
+    --cream: 45 25% 95%;
+    --gold: 42 87% 65%;
+    --deep-brown: 25 40% 25%;
+    --soft-beige: 35 15% 85%;
+    --luxury-gold: 48 100% 50%;
+
+    --sidebar-background: 45 15% 97%;
+    --sidebar-foreground: 30 15% 15%;
+    --sidebar-primary: 35 45% 35%;
+    --sidebar-primary-foreground: 45 15% 97%;
+    --sidebar-accent: 35 25% 88%;
+    --sidebar-accent-foreground: 30 15% 15%;
+    --sidebar-border: 35 20% 88%;
+    --sidebar-ring: 35 45% 35%;
+  }
+
+  .dark {
+    --background: 25 40% 8%;
+    --foreground: 45 15% 95%;
+
+    --card: 25 40% 12%;
+    --card-foreground: 45 15% 95%;
+
+    --popover: 25 40% 12%;
+    --popover-foreground: 45 15% 95%;
+
+    --primary: 42 87% 65%;
+    --primary-foreground: 25 40% 8%;
+
+    --secondary: 30 20% 15%;
+    --secondary-foreground: 45 15% 95%;
+
+    --muted: 30 20% 18%;
+    --muted-foreground: 35 8% 65%;
+
+    --accent: 42 87% 65%;
+    --accent-foreground: 25 40% 8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 45 15% 95%;
+
+    --border: 30 20% 18%;
+    --input: 30 20% 18%;
+    --ring: 42 87% 65%;
+
+    --warm-wood: 35 25% 60%;
+    --cream: 25 15% 12%;
+    --gold: 42 87% 65%;
+    --deep-brown: 45 15% 85%;
+    --soft-beige: 30 10% 25%;
+    --luxury-gold: 48 100% 60%;
+
+    --sidebar-background: 25 40% 8%;
+    --sidebar-foreground: 45 15% 95%;
+    --sidebar-primary: 42 87% 65%;
+    --sidebar-primary-foreground: 25 40% 8%;
+    --sidebar-accent: 30 20% 15%;
+    --sidebar-accent-foreground: 45 15% 95%;
+    --sidebar-border: 30 20% 18%;
+    --sidebar-ring: 42 87% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-semibold;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--warm-wood)) 0%, hsl(var(--deep-brown)) 100%);
+  }
+
+  .luxury-gradient {
+    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--luxury-gold)) 100%);
+  }
+
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--luxury-gold)) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .furniture-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--cream)) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(var(--soft-beige)) 0%, transparent 50%);
+  }
+
+  /* Steel industry specific animations */
+  .steel-shimmer {
+    background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.3), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  .industrial-glow {
+    box-shadow: 0 0 20px hsl(var(--gold) / 0.3);
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  /* Enhanced background animations */
+  .floating-gradient {
+    background: linear-gradient(45deg, 
+      hsl(200, 100%, 85%) 0%, 
+      hsl(280, 100%, 85%) 25%, 
+      hsl(320, 100%, 85%) 50%, 
+      hsl(60, 100%, 85%) 75%, 
+      hsl(200, 100%, 85%) 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease-in-out infinite;
+  }
+
+  .rainbow-border {
+    background: linear-gradient(45deg, 
+      hsl(0, 100%, 70%), 
+      hsl(60, 100%, 70%), 
+      hsl(120, 100%, 70%), 
+      hsl(180, 100%, 70%), 
+      hsl(240, 100%, 70%), 
+      hsl(300, 100%, 70%), 
+      hsl(360, 100%, 70%));
+    background-size: 400% 400%;
+    animation: gradientShift 6s linear infinite;
+  }
+
+  .morphing-background {
+    background: linear-gradient(-45deg, 
+      hsl(210, 100%, 90%), 
+      hsl(270, 100%, 90%), 
+      hsl(330, 100%, 90%), 
+      hsl(30, 100%, 90%));
+    background-size: 400% 400%;
+    animation: morphBackground 10s ease-in-out infinite;
+  }
+
+  /* Infinite scroll animation - faster and smoother */
+  .animate-infinite-scroll {
+    animation: infiniteScroll 30s linear infinite;
+  }
+
+  .animate-fast-infinite-scroll {
+    animation: fastInfiniteScroll 20s linear infinite;
+  }
+
+  .pause-animation {
+    animation-play-state: paused;
+  }
+
+  /* Glitter effect for hover */
+  .hover-glitter {
+    position: relative;
+  }
+
+  .glitter-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(222, 184, 135, 0.8) 1px, transparent 1px),
+      radial-gradient(circle at 80% 70%, rgba(160, 82, 45, 0.6) 1px, transparent 1px),
+      radial-gradient(circle at 40% 80%, rgba(205, 133, 63, 0.7) 1px, transparent 1px),
+      radial-gradient(circle at 70% 20%, rgba(139, 69, 19, 0.5) 1px, transparent 1px),
+      radial-gradient(circle at 90% 50%, rgba(244, 164, 96, 0.8) 1px, transparent 1px);
+    background-size: 30px 30px, 25px 25px, 35px 35px, 40px 40px, 20px 20px;
+    animation: glitterMove 3s ease-in-out infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .hover-glitter:hover .glitter-effect::before {
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+
+  .animate-rotate-slow {
+    animation: rotateSlow 20s linear infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-wiggle {
+    animation: wiggle 1s ease-in-out infinite;
+  }
+
+  .animate-heartbeat {
+    animation: heartbeat 2s ease-in-out infinite;
+  }
+
+  .animate-rainbow {
+    animation: rainbow 3s linear infinite;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  @keyframes glow {
+    0% { box-shadow: 0 0 20px hsl(var(--gold) / 0.3); }
+    100% { box-shadow: 0 0 30px hsl(var(--gold) / 0.6), 0 0 40px hsl(var(--luxury-gold) / 0.4); }
+  }
+
+  @keyframes rotateSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes wiggle {
+    0%, 7%, 14%, 21%, 28%, 35%, 42%, 49%, 56%, 63%, 70%, 77%, 84%, 91%, 98%, 100% { transform: rotate(0deg); }
+    3.5% { transform: rotate(-5deg); }
+    10.5%, 24.5%, 38.5%, 52.5%, 66.5%, 80.5%, 94.5% { transform: rotate(5deg); }
+    17.5%, 31.5%, 45.5%, 59.5%, 73.5%, 87.5% { transform: rotate(-3deg); }
+  }
+
+  @keyframes heartbeat {
+    0%, 50%, 100% { transform: scale(1); }
+    25%, 75% { transform: scale(1.1); }
+  }
+
+  @keyframes rainbow {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes morphBackground {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Improved infinite scroll animations */
+  @keyframes infiniteScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.333%); }
+  }
+
+  @keyframes fastInfiniteScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.333%); }
+  }
+
+  @keyframes glitterMove {
+    0%, 100% { 
+      background-position: 0 0, 10px 10px, 20px 20px, 30px 30px, 40px 40px; 
+    }
+    50% { 
+      background-position: 5px 5px, 15px 15px, 25px 25px, 35px 35px, 45px 45px; 
+    }
+  }
+}
