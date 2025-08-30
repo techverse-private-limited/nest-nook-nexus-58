@@ -155,7 +155,7 @@ const AboutUsSection = () => {
             <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-black group">
               <div className="w-full h-64 md:h-96 lg:h-[400px]">
                 <AutoPlayVideo
-                  src="https://jsndspeyfasxlquibpwg.supabase.co/storage/v1/object/public/assets/sumit%20industry%20expo%20video.mp4"
+                  src="https://jsndspeyfasxlquibpwg.supabase.co/storage/v1/object/public/assets/sumit%20industries%20ad%20video.mp4"
                   className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 rounded-2xl"
                   loop={true}
                 />
