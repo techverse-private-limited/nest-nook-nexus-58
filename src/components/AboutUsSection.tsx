@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { SplitText } from '@/components/ui/split-text';
 import { Settings, Users, Award, Clock, MapPin, Phone } from 'lucide-react';
 import { useState, useEffect, type ReactNode } from 'react';
+import AutoPlayVideo from '@/components/AutoPlayVideo';
 
 const AboutUsSection = () => {
   const [typedText, setTypedText] = useState('');
@@ -153,16 +154,11 @@ const AboutUsSection = () => {
           <div className="relative animate-slide-in-left" style={{animationDelay: '0.3s'}}>
             <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-black group">
               <div className="w-full h-64 md:h-96 lg:h-[400px]">
-                <iframe
-                  src="https://player.vimeo.com/video/1112508780?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;background=1&amp;quality=auto&amp;responsive=1"
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-                  title="Sumit Industries Video"
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                  loading="eager"
-                ></iframe>
+                <AutoPlayVideo
+                  src="https://jsndspeyfasxlquibpwg.supabase.co/storage/v1/object/public/assets/sumit%20industry%20expo%20video.mp4"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 rounded-2xl"
+                  loop={true}
+                />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-deep-brown/20 via-transparent to-transparent pointer-events-none"></div>
             </div>
